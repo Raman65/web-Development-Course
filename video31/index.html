@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Media Query</title>
+    <style>
+      body {
+        background-color: brown;
+      }
+      @media screen and (orientation: portrait) {
+        body{
+            color: purple;
+            border: 2px solid purple;
+        }
+      }
+      @media only screen and (max-width: 455px) {
+        body {
+          background-color: rgb(27, 167, 129);
+        }
+        .boxes{
+          flex-direction: column;
+        }
+      }
+      .boxes{
+        display: flex;
+      }
+      .box{
+        width: 344px;
+        height: 344px;
+        background-color: rgb(53, 109, 155);
+        padding: 3px;
+        margin: 3px;
+    }
+    </style>
+  </head>
+  <body>
+    <div>Hey i am a red body gay!</div>
+    <div class="boxes">
+      <din class="box"></din>
+      <din class="box"></din>
+      <din class="box"></din>
+      <din class="box"></din>
+    </div>
+  </body>
+</html>
