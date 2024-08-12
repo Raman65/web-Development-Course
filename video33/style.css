@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(244, 240, 234);
+}
+header{
+    margin: 2px;
+    padding: 2px;
+}
+.navbar{
+    margin: 2px;
+    padding: 2px;
+}
+.box{
+    background-color: rgb(118, 210, 141);
+    margin: 2px 2px 2px 2px;
+    padding: 2px 0 0 4px;
+    color: rgb(31, 3, 57);
+    border-radius: 7px;
+}
+.card{
+    position: relative;
+    background-color: rgb(116, 85, 145);
+    margin: 2px 2px 2px 2px;
+    padding: 2px 0px 2px 0;
+    
+}
