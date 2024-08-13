@@ -1,0 +1,51 @@
+*{
+    background-color: rgb(200, 229, 229);
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    position: sticky;
+}
+.navbar nav{
+    background-color: rgb(242, 106, 242);
+    height: 10vh;
+    border-style: none;
+    
+}
+.boxes{
+    background-color: aqua;
+    position: relative;
+    height: 90vx;
+    margin: 12px 15px;
+    display: flex;
+}
+.box{
+    display: inline-block;
+    background-color: rgb(186, 150, 29);
+    height: 70vh;
+    width: 35vw;
+    margin: 10vh ;
+    padding: 10vh;
+}
+.box:first-child{
+    background-color: blue;
+}
+.web{
+
+    align-self: center;
+    background-color: rgb(230, 182, 182);
+    color: black;
+    height: 25vh;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 70px;
+    padding: 10px;
+    text-align: center;
+    font-size: 60px;
+}
+.footer{
+    background-color: chartreuse;
+    height: 10vh;
+}
