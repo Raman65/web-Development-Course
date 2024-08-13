@@ -9,12 +9,15 @@ header{
     margin: 2px;
     padding: 2px;
 }
+.boxes
 .box{
-    background-color: rgb(118, 210, 141);
+    
+    background-color: rgb(47, 147, 72);
     margin: 2px 2px 2px 2px;
     padding: 2px 0 0 4px;
     color: rgb(31, 3, 57);
     border-radius: 7px;
+    
 }
 .card{
     position: relative;
