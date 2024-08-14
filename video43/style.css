@@ -1,0 +1,29 @@
+/* .logo{
+    /* width: 40px;
+    height: 23px;
+    background-color: blue; */
+/* } */
+.loge img{
+    height: 134px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.right ul{
+    gap: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right ul li {
+    list-style: none;
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+/* .right ul li svg{
+    width: 14px;
+    height: 14px;
+} */
