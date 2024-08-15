@@ -1,0 +1,12 @@
+/* img{
+    filter: blur(3px);
+} */
+.img1{
+    filter: brightness(122%);
+}
+.img2{
+    filter: grayscale(20%);
+}
+.img3{
+    filter: invert();
+}
