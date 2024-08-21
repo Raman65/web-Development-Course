@@ -30,7 +30,8 @@ body{
 nav{
     max-width: 60vw;
     margin: auto;
-    height: 62px;
+    /* padding: 16px 0; */
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +49,7 @@ nav button{
 .hero{
     
     font-family: "Martel Sans", sans-serif;
-    height: calc(100% - 62px);
+    height: calc(100% - 100px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,6 +80,7 @@ text-align: center;
 .separation{
     height: 7px;
     background-color: rgb(71, 70, 70);
+    width: 100%;
 }
 .main input{
     background-color: rgb(23, 23, 23, 0.7);
@@ -110,6 +112,87 @@ text-align: center;
     background-color: red;
     color: white;
 }
-.hero-buttons{
+.faq{
+    background-color: black;
+    color: white;
+    padding: 34px;
+}
+.faqbox:hover{
+    background-color: grey;
+}
+.faqbox{
+    transition: all 1s ease-out;
+    display: flex;
+    background-color: rgb(62, 62, 62);
+    color: white;
+    font-size: 20px;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px 0 10px 80px;
+    max-width: 60vw;
+    cursor: pointer;
 
+}
+.faq h2{
+    margin: 0 0 0 80px;
+    padding: 20px;
+    font-size: 34px;
+
+}
+.footer .footeritem{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: white;
+    max-width: 80vw;
+    margin: auto;
+}
+
+.footeritem{
+    
+    display: flex;
+    flex-direction: column;
+}
+.footer .footeritem a{
+    color: white;
+}
+.footer1{
+    margin: 1vw 10vw;
+    color: white;
+    padding: 20px 0px;
+    font-size: 20px;
+}
+@media screen and (max-width: 1200px) {
+    .footer .footeritem{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width: 750px) {
+    .footer .footeritem{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 500px) {
+    .footer .footeritem{
+    display: grid;
+    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+    }
+}
+@media screen and (max-width: 550px) {
+    .faq h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    .faqbox{
+        margin: 0;
+        padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
