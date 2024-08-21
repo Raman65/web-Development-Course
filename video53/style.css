@@ -1,17 +1,115 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 *{
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
 }
-main{
+.main{
     background-image: url(assets/images/backround.jpg);
     height: 80vh;
+    background-position: center center;
+    background-size: max(1000px 100vw);
+    background-repeat: no-repeat;
+    height: 70vh;
+    position: relative;
+    
 }
-main .box{
-    height: 80vh;
-    width: 100%;
-    opacity: 0.44;
+body{
     background-color: black;
+}
+.main .box{
+    height: 70vh;
+    width: 100%;
+    opacity: 0.69;
+    background-color: black;
+    position: absolute;
+    top: 0;
+}
+nav{
+    max-width: 60vw;
+    margin: auto;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    color: red;
+    width: 114px;
+    position: relative;
+    z-index: 10;
+}
+nav button{
+    position: relative;
+    z-index: 10;
+}
+.hero{
+    
+    font-family: "Martel Sans", sans-serif;
+    height: calc(100% - 62px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    text-align: center;
+    padding: 0 25px;
+    gap: 20px;
+
+}
+.hero> :first-child{
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 40px;
+text-align: center;
+}
+.hero> :nth-child(2){
+    font-weight: 400;
+    font-size: 24px;
+text-align: center;
+}
+.hero> :nth-child(2){
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+.separation{
+    height: 7px;
+    background-color: rgb(71, 70, 70);
+}
+.main input{
+    background-color: rgb(23, 23, 23, 0.7);
+    padding: 7px 15px 7px 15px;
+    font-weight: 600;
+    color: white;
+    border: 1px solid rgba(180, 169, 169, 0.913);
+    font-size: 12px;
+    border-radius: 4px;
+}
+.btn{
+    padding: 3px 8px;
+    font-weight: bold;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(45, 40, 40, 0.785);
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-red{
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+.btn-red-sm{
+    background-color: red;
+    color: white;
+}
+.hero-buttons{
+
 }
