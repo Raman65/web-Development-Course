@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Simulator</title>
+    <style>
+        /* styles.css */
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+    color: #0f0;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminal {
+    background-color: #001f00;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0f0;
+    width: 500px;
+    min-height: 250px;
+}
+
+#messageArea {
+    white-space: pre-line;
+    line-height: 1.5em;
+}
+
+.blinking-dots::after {
+    content: '...';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        color: transparent;
+    }
+    50% {
+        color: #0f0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div id="messageArea"></div>
+    </div>
+    <!-- Create a hacking simulator which has green background and it shows these message with random delay of of 1 to 7 seconds
+    
+    Initialling Hacking...
+    Reading Your Files....
+    Password files Deleted...
+    sending all the passwords and personal files to server...
+    Cleaning up...
+
+    The three dots must blink so that it looks like a real Terminal
+    -->
+    <script src="script.js"></script>
+</body>
+</html>
