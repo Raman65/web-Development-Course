@@ -1,0 +1,71 @@
+<!-- 10. The Coffee Machine:
+    In your coffee shop application, you need to simulate the process of brewing coffee asynchronously. Write an async function named brewCoffee that takes the type of coffee and returns a promise. The promise should resolve with a message indicating that the coffee is ready after a random delay. -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Machine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .coffee-container {
+            margin-top: 20px;
+        }
+
+        .coffee-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .coffee-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Coffee Shop</h1>
+    <div class="coffee-container">
+        <button onclick="orderCoffee('Espresso')">Order Espresso</button>
+        <button onclick="orderCoffee('Latte')">Order Latte</button>
+        <button onclick="orderCoffee('Cappuccino')">Order Cappuccino</button>
+    </div>
+    <div class="coffee-message" id="coffeeMessage"></div>
+
+    <script>
+        // Function to simulate brewing coffee
+async function brewCoffee(coffeeType) {
+    // Return a promise that resolves after a random delay
+    return new Promise((resolve) => {
+        // Generate a random delay between 1 to 5 seconds
+        const delay = Math.floor(Math.random() * 5000) + 1000;
+
+        setTimeout(() => {
+            resolve(`Your ${coffeeType} is ready!`);
+        }, delay);
+    });
+}
+
+// Function to handle ordering coffee
+async function orderCoffee(coffeeType) {
+    // Display a brewing message
+    const coffeeMessageElement = document.getElementById('coffeeMessage');
+    coffeeMessageElement.textContent = `Brewing your ${coffeeType}...`;
+
+    // Wait for the coffee to be brewed
+    const message = await brewCoffee(coffeeType);
+
+    // Display the final message when coffee is ready
+    coffeeMessageElement.textContent = message;
+}
+
+    </script>
+</body>
+</html>

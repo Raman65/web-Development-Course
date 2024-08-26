@@ -1,0 +1,56 @@
+<!-- 8. Async Array Mapping:
+   Write an asynchronous function that takes an array of numbers and returns a new array of Promises where each number is multiplied by 2 after a delay of 500 milliseconds. -->
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Array Mapping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Async Array Mapping</h1>
+    <button id="startButton">Start</button>
+    <div id="output"></div>
+
+    <script>
+        // Function to create a delay
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Asynchronous function to map array
+async function asyncArrayMap(arr) {
+    const result = arr.map(async (num) => {
+        await delay(500); // Delay of 500 milliseconds
+        return num * 2;   // Multiply the number by 2
+    });
+    return Promise.all(result); // Wait for all promises to resolve
+}
+
+document.getElementById('startButton').addEventListener('click', async () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const outputDiv = document.getElementById('output');
+
+    outputDiv.innerHTML = 'Processing...';
+
+    const result = await asyncArrayMap(numbers);
+    outputDiv.innerHTML = 'Result: ' + result.join(', ');
+});
+
+    </script>
+</body>
+</html>

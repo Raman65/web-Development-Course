@@ -1,0 +1,52 @@
+<!-- 2. The Double Trouble:
+   You are tasked with writing a function that doubles each element in an array. However, there's a catch: if the array contains consecutive duplicate elements, only double one of them. -->
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Trouble</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Double Trouble</h1>
+    <p>Input Array: [2, 2, 3, 4, 4, 4, 5]</p>
+    <button onclick="doubleTrouble()">Double Array</button>
+    <div id="output"></div>
+
+    <script>
+        function doubleTrouble() {
+    // Example array
+    let arr = [2, 2, 3, 4, 4, 4, 5];
+    
+    // Result array to store the doubled values
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            // If the current element is the same as the next one, double it and skip the next
+            result.push(arr[i] * 2);
+            i++; // Skip the next element
+        } else {
+            // Otherwise, just double the current element
+            result.push(arr[i] * 2);
+        }
+    }
+
+    // Display the result
+    document.getElementById('output').innerText = 'Doubled Array: [' + result.join(', ') + ']';
+}
+
+    </script>
+</body>
+</html>

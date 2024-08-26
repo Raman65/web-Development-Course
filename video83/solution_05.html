@@ -1,0 +1,82 @@
+<!-- 5. The Sum Selector:
+   You are working on a function that should sum all numbers in an array until it encounters a negative number. Write a function that performs this summation. -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Sum Selector</title>
+       <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+       </style>
+   </head>
+   <body>
+       <div class="container">
+           <h1>Sum Selector</h1>
+           <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+           <button onclick="calculateSum()">Calculate Sum</button>
+           <p id="result"></p>
+       </div>
+       <script>
+        function calculateSum() {
+    const input = document.getElementById('arrayInput').value;
+    const array = input.split(',').map(Number);
+    let sum = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+            break;
+        }
+        sum += array[i];
+    }
+
+    document.getElementById('result').innerText = 'Sum: ' + sum;
+}
+
+       </script>
+   </body>
+   </html>
+   
