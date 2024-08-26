@@ -1,0 +1,111 @@
+<!-- 11. The Array Filterer:
+    You are building a search feature for your e-commerce site. Write a function named filterProducts that takes an array of product objects and a filter criterion. The function should return a new array containing only the products that match the filter criterion. -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Filter</title>
+        <style>
+            body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Product Search</h1>
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <ul id="productList"></ul>
+        </div>
+    
+        <script>
+            // Sample product data
+const products = [
+    { name: 'Apple iPhone 13', category: 'Electronics', price: 999 },
+    { name: 'Samsung Galaxy S21', category: 'Electronics', price: 799 },
+    { name: 'Sony WH-1000XM4', category: 'Electronics', price: 349 },
+    { name: 'Apple MacBook Pro', category: 'Computers', price: 1299 },
+    { name: 'Dell XPS 13', category: 'Computers', price: 999 },
+    { name: 'Nike Air Max', category: 'Shoes', price: 150 }
+];
+
+// Function to filter products based on a search criterion
+function filterProducts(products, criterion) {
+    return products.filter(product => {
+        return product.name.toLowerCase().includes(criterion.toLowerCase()) ||
+               product.category.toLowerCase().includes(criterion.toLowerCase());
+    });
+}
+
+// Function to render products on the webpage
+function renderProducts(productArray) {
+    const productList = document.getElementById('productList');
+    productList.innerHTML = '';
+
+    productArray.forEach(product => {
+        const li = document.createElement('li');
+        li.textContent = `${product.name} - ${product.category} - $${product.price}`;
+        productList.appendChild(li);
+    });
+}
+
+// Event listener for search input
+document.getElementById('searchInput').addEventListener('input', (event) => {
+    const searchCriterion = event.target.value;
+    const filteredProducts = filterProducts(products, searchCriterion);
+    renderProducts(filteredProducts);
+});
+
+// Initial rendering of all products
+renderProducts(products);
+
+        </script>
+    </body>
+    </html>
+
+    

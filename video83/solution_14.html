@@ -1,0 +1,76 @@
+<!-- 14. The Window Scroller:
+    You are developing a single-page application with a smooth scrolling effect. Implement a function named smoothScrollToTop that smoothly scrolls the window to the top when called. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll to Top</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 2000px; /* Added to create scrollable content */
+}
+
+.content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to My Page</h1>
+        <p>Scroll down to see the "Back to Top" button.</p>
+        Add more content to enable scrolling
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam...</p>
+        <p>...</p>
+        <p>End of the content</p>
+    </div>
+    <button id="scrollToTopBtn">Back to Top</button>
+
+    <script>
+        function smoothScrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+document.addEventListener("scroll", function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (window.scrollY > 200) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+});
+
+document.getElementById("scrollToTopBtn").addEventListener("click", smoothScrollToTop);
+
+    </script>
+</body>
+</html>

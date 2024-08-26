@@ -1,0 +1,159 @@
+<!-- 12. The Token Manager:
+    You are developing a user authentication system, and you need to manage user authentication tokens. Implement a function named setAuthToken that takes an authentication token and sets it in localStorage with an expiration time. -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Manager</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#tokenDisplay {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#currentToken {
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Token Manager</h1>
+        <form id="tokenForm">
+            <label for="token">Enter Authentication Token:</label>
+            <input type="text" id="token" name="token" required>
+
+            <label for="expiration">Expiration Time (in minutes):</label>
+            <input type="number" id="expiration" name="expiration" value="60" required>
+
+            <button type="submit">Set Token</button>
+        </form>
+
+        <div id="tokenDisplay">
+            <h2>Current Token:</h2>
+            <p id="currentToken">No token set.</p>
+        </div>
+    </div>
+
+    <script>// script.js
+
+        // Set the token in localStorage with expiration time
+        function setAuthToken(token, expirationTime) {
+            const currentTime = Date.now();
+            const expirationTimestamp = currentTime + expirationTime * 60000; // Convert minutes to milliseconds
+        
+            const tokenData = {
+                token: token,
+                expiration: expirationTimestamp
+            };
+        
+            localStorage.setItem('authToken', JSON.stringify(tokenData));
+        }
+        
+        // Get the token from localStorage and check if it's expired
+        function getAuthToken() {
+            const tokenData = JSON.parse(localStorage.getItem('authToken'));
+        
+            if (!tokenData) {
+                return null;
+            }
+        
+            const currentTime = Date.now();
+        
+            if (currentTime > tokenData.expiration) {
+                localStorage.removeItem('authToken');
+                return null;
+            }
+        
+            return tokenData.token;
+        }
+        
+        // Display the current token if it exists
+        function displayCurrentToken() {
+            const token = getAuthToken();
+            const currentTokenElement = document.getElementById('currentToken');
+        
+            if (token) {
+                currentTokenElement.textContent = token;
+            } else {
+                currentTokenElement.textContent = 'No token set or token has expired.';
+            }
+        }
+        
+        // Handle the form submission
+        document.getElementById('tokenForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const token = document.getElementById('token').value;
+            const expiration = parseInt(document.getElementById('expiration').value);
+        
+            setAuthToken(token, expiration);
+            displayCurrentToken();
+        });
+        
+        // Display the token on page load
+        displayCurrentToken();
+        
+
+    </script>
+</body>
+</html>
