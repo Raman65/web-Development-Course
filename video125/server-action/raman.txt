@@ -1,0 +1,1 @@
+name is ram and address is 10
